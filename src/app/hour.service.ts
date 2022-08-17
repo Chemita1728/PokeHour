@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Hours } from './hour';
+// import { Hours } from './hour';
+import { Hour } from './hour';
 
 
 @Injectable({ providedIn: 'root' })
@@ -18,8 +19,13 @@ export class HourService {
 
     constructor( private http: HttpClient) { }
 
-    getHours(): Observable<Hours> {
-        var query = this.http.get<Hours>(`${this.hourUrl}/hour`);
+    // getHours(): Observable<Hours> {
+    //     var query = this.http.get<Hours>(`${this.hourUrl}/hour`);
+    //     // console.log(query);
+    //     return query;
+    // }
+    getHours(): Observable<Hour> {
+        var query = this.http.get<Hour>(`${this.hourUrl}/hour`);
         // console.log(query);
         return query;
     }

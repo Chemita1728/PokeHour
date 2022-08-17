@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hours, Hour } from '../hour';
+// import { Hours, Hour } from '../hour';
+import { Hour } from '../hour';
 import { HourService } from '../hour.service';
 
 @Component({
@@ -9,9 +10,10 @@ import { HourService } from '../hour.service';
   styleUrls: ['./hour.component.css'],
 })
 export class HourComponent implements OnInit {
-  hours: Hours | undefined;
+  // hours: Hours | undefined;
 
   constructor(private hourService: HourService) {}
+  
   hourList: Hour[] | undefined;
 
   ngOnInit(): void {
