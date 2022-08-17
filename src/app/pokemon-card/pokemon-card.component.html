@@ -1,0 +1,28 @@
+<mat-card *ngIf="pokemonName">
+    {{ getPokemonByName(pokemonName) }}
+    
+    <mat-option>
+        {{ pokemon?.name | uppercase }}
+    </mat-option>
+    <img src="{{ pokemon?.sprites?.front_default }}">
+    <img src="{{ pokemon?.sprites?.back_default }}">
+    <img src="{{ pokemon?.sprites?.front_shiny }}">
+    <img src="{{ pokemon?.sprites?.back_shiny }}">
+    <mat-option *ngFor="let ab of pokemon?.abilities">
+        <div *ngIf="ab.is_hidden">
+            Hidden Ability: {{ ab.ability.name }}    
+        </div>
+        <div *ngIf="!ab.is_hidden">
+            Ability: {{ ab.ability.name }}    
+        </div>
+    </mat-option> 
+    <mat-option>
+        Height: {{ pokemon?.height }}
+    </mat-option>
+    <mat-option>
+        Weight: {{ pokemon?.weight }}
+    </mat-option>
+    
+    
+    
+</mat-card>

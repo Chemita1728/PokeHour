@@ -1,0 +1,17 @@
+
+<h2>My Pokemon</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Pokemon</mat-label>
+    <mat-select [(ngModel)]="selectedPokemon">
+      <mat-option *ngFor="let pokemon of pokemonList?.results" [value]="pokemon.name">
+        {{pokemon.name | uppercase}}   
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<!-- <p>My pokemon: {{ selectedPokemon }}</p> -->
+<app-pokemon-card [pokemonName]="selectedPokemon"></app-pokemon-card>
+
+<app-hour></app-hour>
+
+
+
